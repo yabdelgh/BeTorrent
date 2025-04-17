@@ -1,3 +1,7 @@
+// 'use client'
+// import { useRouter } from 'next/navigation'
+// import { useEffect, useState } from 'react'
+
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -32,3 +36,59 @@ export default function RootLayout({
     </html>
   );
 }
+//   children,
+// }: {
+//   children: React.ReactNode
+// }) {
+//   const router = useRouter()
+//   const [isValid, setIsValid] = useState(false)
+
+//   useEffect(() => {
+//     const token = sessionStorage.getItem('token')
+//     // router.replace('/')
+//     if (!token) {
+//       router.replace('/')
+//     } else {
+//       setIsValid(true)
+//     }
+//   }, [])
+
+//   // if (!isValid) {
+//   //   return (
+//   //   <html lang="en">
+//   //     <body
+//   //       className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+//   //     >
+//   //      <div>Loading...</div>
+//   //     </body>
+//   //   </html> 
+//   //   );
+//   // }
+
+//   // return <>{children}</>
+//   if (isValid) {
+//     return (
+//     <html lang="en">
+//       <body
+//         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+//       >
+//         {children}
+//       </body>
+//     </html>
+//   )
+//   }
+//   else {
+//     return (
+//     <html lang="en">
+//       <body
+//         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+//       >
+//         <Home/>
+//        {/* <div>Loading...</div> */}
+//       </body>
+//     </html> 
+//     );
+//   }
+
+// }
+  

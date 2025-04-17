@@ -65,7 +65,7 @@ class AuthApp < Sinatra::Base
     #   token_id: auth_token.token,
     #   expires_at: auth_token.expires_at
     # }.to_json
-    redirect "http://localhost:4000/home#token=#{token}"
+    redirect "http://localhost:4000/auth#token=#{token}"
   end
   
   get '/debug/session' do

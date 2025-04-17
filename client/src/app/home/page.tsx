@@ -1,6 +1,5 @@
-// pages/index.js
-
-export default function Home() {
+'use client'
+function Home() {
     return (
       <div className="min-h-screen flex flex-col justify-center items-center bg-gray-100 px-4">
         <h1 className="text-4xl font-bold text-gray-800 mb-4">
@@ -12,4 +11,5 @@ export default function Home() {
       </div>
     );
   }
-  
+
+export default Home;
