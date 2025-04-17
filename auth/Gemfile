@@ -1,0 +1,14 @@
+source 'https://rubygems.org'
+
+gem 'sinatra'
+gem 'sinatra-contrib'  # For sinatra/reloader
+gem 'omniauth', '~> 2.0'
+gem 'omniauth-oauth2', '~> 1.7'  # Add this dependency
+gem 'omniauth-google-oauth2', '~> 1.0'  # Use a newer version
+gem 'dotenv'
+gem 'jwt'
+# gem 'thin'  # A recommended server for Sinatra          # A recommended server for Sinatra
+
+
+gem "rackup", "~> 2.2"
+gem "puma", "~> 6.6"
