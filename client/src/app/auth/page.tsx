@@ -1,6 +1,7 @@
 'use client'
 import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
+import Loading from '../components/loading';
 
 const AuthCallback = () => {
   const router = useRouter();
@@ -19,7 +20,7 @@ const AuthCallback = () => {
     }
   }, []);
 
-  return <div>Loading...</div>;
+  return <Loading/>;
 };
 
 export default AuthCallback;
