@@ -46,7 +46,7 @@ class AuthApp < Sinatra::Base
         user_id: user_info[:uid],
         email: user_info[:email],
         name: user_info[:name],
-        exp: Time.now.to_i + 3600  # 1 hour expiration
+        exp: Time.now.to_i + 10  # 1 hour expiration
       },
       ENV['JWT_SECRET'],
       'HS256'
@@ -67,15 +67,51 @@ class AuthApp < Sinatra::Base
     # }.to_json
     redirect "http://localhost:4000/auth#token=#{token}"
   end
-  
-  get '/debug/session' do
-    content_type :json
-    session.to_h.to_json
+ 
+  # Verification endpoint
+  get '/verify' do
+  content_type :json
+
+  # Extract the Authorization header
+  auth_header = request.env['HTTP_AUTHORIZATION']
+
+  if auth_header && auth_header.start_with?('Bearer ')
+    token = auth_header.split(' ').last
+
+    begin
+      # Decode the token with the same secret and algorithm
+      decoded_token = JWT.decode(
+        token,
+        ENV['JWT_SECRET'],
+        true, # Verify the signature
+        { algorithm: 'HS256' }
+      )
+
+      # Token is valid - return user data
+      { authenticated: true, user: decoded_token.first }.to_json
+
+    rescue JWT::ExpiredSignature
+      status 401
+      { error: 'Authentication failed: Token has expired.' }.to_json
+
+    rescue JWT::DecodeError => e
+      status 401
+      { error: "Authentication failed: Invalid token. #{e.message}" }.to_json
+    end
+
+  else
+    status 401
+    { error: 'Authentication failed: Missing or malformed Authorization header.' }.to_json
   end
+end
+  
+  # get '/debug/session' do
+  #   content_type :json
+  #   session.to_h.to_json
+  # end
   
 end
 
-# Run the application
 if __FILE__ == $0
   AuthApp.run! host: 'localhost', port: 3000 
 end
