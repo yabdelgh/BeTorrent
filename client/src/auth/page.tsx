@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import Loading from '@ui/Loading';
 import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
@@ -18,9 +18,9 @@ const AuthCallback = () => {
     } else {
       router.push('/login?error=missing_token');
     }
-  }, []);
+  }, [router]);
 
-  return <Loading/>;
+  return <Loading />;
 };
 
 export default AuthCallback;

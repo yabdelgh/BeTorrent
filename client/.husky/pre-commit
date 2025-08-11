@@ -1,1 +1,9 @@
-npm test
+#!/usr/bin/env sh 
+
+echo ">>                Running pre-commit hooks..."
+echo ">> Linting your files and fixing them if needed..."
+npm run lint-fix
+echo ">> Running type checks..."
+npm run  type-check
+echo "add changed files to index"
+git update-index --again

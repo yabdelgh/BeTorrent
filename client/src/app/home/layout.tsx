@@ -1,6 +1,6 @@
 // import AuthWrapper from "../auth/authwrapper"
 
-import AuthWrapper from "@components/AuthWrapper";
+import AuthWrapper from '@components/AuthWrapper';
 
 export default function ProtectedLayout({
   children,
