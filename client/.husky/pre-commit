@@ -1,9 +1,11 @@
-#!/usr/bin/env sh 
+#!/usr/bin/env sh
+SCRIPT_DIR="$(pwd)"
 
+cd "$SCRIPT_DIR/client" || { echo "Failed to cd into client folder"; exit 1; }
 echo ">>                Running pre-commit hooks..."
 echo ">> Linting your files and fixing them if needed..."
 npm run lint-fix
 echo ">> Running type checks..."
-npm run  type-check
-echo "add changed files to index"
+npm run type-check
+echo "add changed files to indexx"
 git update-index --again
