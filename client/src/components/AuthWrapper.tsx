@@ -1,29 +1,29 @@
-'use client'
+'use client';
 
-import { useEffect, useState } from 'react'
-import { useRouter } from 'next/navigation'
-import Loading from '@ui/Loading'
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
+import Loading from '@ui/Loading';
 
 export default function AuthWrapper({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
-  const [ready, setReady] = useState(false)
-  const router = useRouter()
+  const [ready, setReady] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
-    const token = sessionStorage.getItem('token')
+    const token = sessionStorage.getItem('token');
 
     if (!token) {
-      router.replace('/login') 
-      return
+      router.replace('/login');
+      return;
     }
 
-    setReady(true)
-  }, [router])
+    setReady(true);
+  }, [router]);
 
-  if (!ready) return <Loading />
+  if (!ready) return <Loading />;
 
-  return <>{children}</>
+  return <>{children}</>;
 }
