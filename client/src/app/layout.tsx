@@ -4,11 +4,13 @@ import '../../globals.css';
 import Logo from '@public/BeTorrent.svg';
 
 const rubik = Rubik({
+  subsets: ['latin'],
   weight: ['300', '400', '500', '700', '800', '900', '600'],
   variable: '--font-rubik',
 });
 
 const raleway = Raleway({
+  subsets: ['latin'],
   weight: ['300', '400', '500', '700', '800', '900', '600'],
   variable: '--font-raleway',
 });

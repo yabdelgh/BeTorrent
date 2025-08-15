@@ -7,9 +7,10 @@ module.exports = {
   highlight: '#FDFD96',
   primary: {
     100: '#AD7300',
+    200:'#65440A',
   },
   secondary: {
-    100: '#AD7300',
+    100: '#202020',
   },
   error: {
     100: '#F85F5F',
@@ -18,9 +19,10 @@ module.exports = {
     100: '#17C21D',
   },
   input:{
-    background:'rgba(0,0,0,0.7)'
+    background:'rgba(0,0,0,0.8)'
   },
   glass: {
-    overlay: 'rgba(173, 115, 0, 0.05)',
+   // primaryOverlay:'rgba(173, 115, 0, 0.20)',
+    overlay: 'rgb(173, 116,0, 0.03)',
   },
 };
