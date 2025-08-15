@@ -7,6 +7,7 @@ export const Google = ({ ...rest }: LucideProps) => {
       viewBox='0 0 48 48'
       width='30'
       height='26'
+      {...rest}
     >
       <path
         fill='#FFC107'
