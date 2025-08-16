@@ -22,7 +22,7 @@
       "@/*": ["./src/*"],
       "@components/*": ["./src/components/*"],
       "@containers/*": ["./src/containers/*"],
-       "@schema/*": ["./src/schema/*"],
+      "@schema/*": ["./src/schema/*"],
       "@ui/*": ["./src/components/ui/*"],
       "@hooks/*": ["./src/hooks/*"],
       "@api/*": ["./src/api/*"],

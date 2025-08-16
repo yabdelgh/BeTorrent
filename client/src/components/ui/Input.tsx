@@ -11,17 +11,19 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   value?: string;
   error?: string;
 }
+
 const inputTv = tv({
   slots: {
-    container: 'flex w-full max-w-[48%] flex-col gap-2',
+    container: 'flex w-full  flex-col gap-2',
     label: 'font-raleway text-sm font-medium text-white',
     input:
-      'h-[55px] rounded border border-primary-100 bg-input-background pl-6 font-rubik text-sm font-light text-primary-100 placeholder-primary-100 outline-none',
+      'h-[55px] rounded border  border-primary-50  bg-input-background pl-6 font-rubik text-sm font-light text-primary-50 placeholder-primary-50 outline-none',
+    error: 'text-error-100 text-sm font-light',
   },
   variants: {
     focused: {
       true: {
-        input: 'border-2 border-dashed',
+        input: 'border-2 border-dashed ',
       },
     },
     error: {
@@ -77,7 +79,7 @@ export const Input = ({
         value={value}
         {...rest}
       />
-      {error && <span style={{ color: 'red' }}>{error}</span>}
+      {error && <span className={styles.error()}>{error}</span>}
     </div>
   );
 };
