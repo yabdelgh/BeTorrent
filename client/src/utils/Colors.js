@@ -24,7 +24,6 @@ module.exports = {
     
   },
   glass: {
-   // primaryOverlay:'rgba(173, 115, 0, 0.20)',
     overlay: 'rgba(173, 116,0, 0.03)',
   },
 };
