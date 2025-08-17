@@ -1,9 +1,9 @@
-export interface SignUpFormData {
+import { SignInFormData } from "./SignInFormData";
+
+export interface SignUpFormData extends SignInFormData {
     firstName: string| null;
     lastName: string| null;
-    username: string| null;
     email: string| null;
-    password: string| null;
     confirmPassword: string| null;
 }
 

@@ -72,7 +72,7 @@ export default function LoginForm() {
 
     //   </div>
     // </div>
-    <div className='flex max-w-[700px] backdrop-blur-xl flex-col gap-8 rounded-lg bg-glass-overlay px-6 py-8 md:border md:border-primary-50 md:px-8 md:py-10'>
+    <div className='flex  md:backdrop-blur-xl flex-col gap-12 rounded-lg md:bg-glass-overlay px-6 py-8 md:border md:border-primary-50 md:px-8 md:py-10'>
       <div className='flex flex-col gap-5'>
         <div className='flex flex-row items-center justify-between'>
           <h1 className='font-raleway text-2xl font-bold text-white md:text-3xl'>
@@ -87,7 +87,7 @@ export default function LoginForm() {
         </p>
       </div>
 
-      <div className='grid grid-cols-1 gap-5 pb-4 sm:grid-cols-2'>
+      <div className='grid grid-cols-1 gap-8 pb-2 sm:grid-cols-2'>
         <Input label='First Name' placeholder='Enter your first name' />
         <Input label='Last Name' placeholder='Enter your last name' />
         <Input label='Username' placeholder='Enter your username' />
@@ -103,10 +103,10 @@ export default function LoginForm() {
           type='password'
         />
       </div>
-      <div className='flex flex-col gap-5'>
-        <Button disabled variant='Primary' label='Sign Up' />
-        <div className='h-[1px] bg-primary-100' />
-        <div className='flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-5'>
+      <div className='flex flex-col gap-8'>
+        <Button  variant='Primary' label='Sign Up' />
+        <div className='h-[1px] bg-primary-50 ' />
+        <div className='flex  items-center justify-center gap-3 flex-row sm:gap-5'>
           <Button
             icon={FortyTwo}
             variant='Secondary'

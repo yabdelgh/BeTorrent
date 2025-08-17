@@ -14,7 +14,7 @@ const ButtonTv = tv({
     variant: {
       Primary: { container: 'bg-primary-100 ' },
       Secondary: {
-        container: 'border border-primary-100 bg-secondary-100',
+        container: 'border border-primary-50 bg-secondary-100',
       },
     },
     disabled: {
@@ -46,6 +46,7 @@ export const Button = ({
   disabled,
   ...rest
 }: ButtonProps) => {
+  
   const styles = useMemo(
     () => ButtonTv({ variant, disabled }),
     [variant, disabled],
