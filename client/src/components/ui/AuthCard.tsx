@@ -10,7 +10,7 @@ export const AuthCard = ({ children, className, ...rest }: AuthCardPops) => {
     <div
       {...rest}
       className={clsx(
-        'flex flex-col gap-12 rounded-lg px-6 py-8 md:border md:border-primary-50 md:bg-glass-overlay md:px-8 md:py-10 md:backdrop-blur-xl',
+        'flex flex-col  w-full  gap-12 rounded-lg px-6 py-8 md:border md:border-primary-50 md:bg-glass-overlay md:px-8 md:py-10 md:backdrop-blur-xl',
         className,
       )}
     >

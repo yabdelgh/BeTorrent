@@ -18,12 +18,12 @@ const TextLink: React.FC<TextLinkProps> = ({
 }) => {
   return (
     <Link
-      onClick={onClick}
-      className={clsx(
-        'font-raleway text-base font-bold text-white underline',
-        className,
-      )}
-      {...rest}
+    onClick={onClick}
+    className={clsx(
+      'font-raleway text-base font-semibold text-white underline-offset-[3px] underline',
+      className,
+    )}
+    {...rest}
     >
       {text || children}
     </Link>

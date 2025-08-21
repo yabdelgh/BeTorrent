@@ -7,7 +7,7 @@ const ButtonTv = tv({
   slots: {
     container:
       'flex h-[50px] w-full  items-center justify-center gap-2 rounded-[5px] bg-primary-100 p-4 font-raleway font-bold text-white',
-    label: '',
+    label: 'hidden sm:block',
     icon: '',
   },
   variants: {
@@ -46,7 +46,6 @@ export const Button = ({
   disabled,
   ...rest
 }: ButtonProps) => {
-  
   const styles = useMemo(
     () => ButtonTv({ variant, disabled }),
     [variant, disabled],
@@ -61,10 +60,10 @@ export const Button = ({
           className='animate-spin text-success-100'
         />
       ) : (
-        BtnIcon && <BtnIcon />
+        BtnIcon && <BtnIcon  />
       )}
 
-      {label}
+      <span className={styles.label()}>{label}</span>
     </button>
   );
 };
