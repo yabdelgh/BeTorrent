@@ -1,5 +1,5 @@
 'use client';
-import { SignInFormSchema } from '@/schema/SignInSchema';
+import { LoginCredentialsSchema } from '@/schema/LoginCredentialsSchema';
 import { SignInFormData } from '@/types/SignInFormData';
 import { FortyTwo } from '@components/icons/FortyTwo';
 import { Google } from '@components/icons/Google';
@@ -12,7 +12,7 @@ import { useCallback } from 'react';
 import { useForm } from 'react-hook-form';
 import z from 'zod';
 
-type SignUpSchemaType = z.infer<typeof SignInFormSchema>;
+type SignUpSchemaType = z.infer<typeof LoginCredentialsSchema>;
 
 export default function SignInForm() {
   const handleGoogleLogin = useCallback(
@@ -26,7 +26,7 @@ export default function SignInForm() {
   );
 
   const { handleSubmit, control } = useForm<SignUpSchemaType>({
-    resolver: zodResolver(SignInFormSchema),
+    resolver: zodResolver(LoginCredentialsSchema),
   });
 
   const handleOnSignIn = useCallback((data: SignInFormData) => {

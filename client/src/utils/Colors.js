@@ -25,6 +25,9 @@ module.exports = {
     background:'rgba(0,0,0,0.8)'
     
   },
+  gray: {
+    100:'#D7D7D7',
+  },
   glass: {
     overlay: 'rgba(173, 116,0, 0.03)',
   },
