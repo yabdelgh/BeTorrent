@@ -40,7 +40,7 @@ interface ButtonProps
 export const Button = ({
   label,
   isLoading,
-  variant,
+  variant = 'Primary',
   icon: BtnIcon,
   className = '',
   disabled,

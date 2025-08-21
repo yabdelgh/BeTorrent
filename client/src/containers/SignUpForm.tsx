@@ -1,21 +1,20 @@
 'use client';
 
-import { SignUpFormSchema } from '@/schema/SignUpFormSchema';
+import { AccountCreationSchema } from '@/schema/AccountCreationSchema';
 import { SignUpFormInitValues } from '@/types/SignInFormData';
 import { SignUpFormData } from '@/types/SignUpFormData';
 import { FortyTwo } from '@components/icons/FortyTwo';
 import { Google } from '@components/icons/Google';
 import { AuthCard } from '@components/ui/AuthCard';
 import { Button } from '@components/ui/Button';
-import { ControlledInput, Input } from '@components/ui/Input';
+import { ControlledInput } from '@components/ui/Input';
 import TextLink from '@components/ui/TextLink';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Sign } from 'crypto';
 import { useCallback } from 'react';
 import { useForm } from 'react-hook-form';
 import z from 'zod';
 
-type SignUpSchemaType = z.infer<typeof SignUpFormSchema>;
+type SignUpSchemaType = z.infer<typeof AccountCreationSchema>;
 
 export default function SignUpForm() {
 
@@ -30,7 +29,7 @@ export default function SignUpForm() {
   );
 
   const { handleSubmit, control } = useForm<SignUpSchemaType>({
-    resolver: zodResolver(SignUpFormSchema),
+    resolver: zodResolver(AccountCreationSchema),
   });
 
   const handleOnSignUp = useCallback((data: SignUpFormData) => {
@@ -96,7 +95,6 @@ export default function SignUpForm() {
       <div className='flex flex-col gap-8'>
         <Button
           // disabled={isLoding} disable the button on isLoading
-          variant='Primary'
           label='Sign Up'
           onClick={handleSubmit(handleOnSignUp)}
         />
