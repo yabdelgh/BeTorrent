@@ -27,6 +27,7 @@ export default [
       'next.config.js',
       'postcss.config.js',
       'next-env.d.ts',
+      'next.config.ts',
     ],
     files: ['**/*.ts', '**/*.tsx'],
     languageOptions: {
